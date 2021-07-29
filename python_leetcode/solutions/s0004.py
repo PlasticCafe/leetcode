@@ -12,7 +12,11 @@ class Solution:
         if even: 
             mergedSize = mergedSize + 1
         merged = 0
-        idx1 = 0, idx2 = 0, count = 0, val = 0, oldval = 0
+        idx1 = 0
+        idx2 = 0
+        count = 0
+        val = 0
+        oldVal = 0
         while(count < mergedSize):
             oldVal = val
             if(idx1 >= len(nums1)):
@@ -29,7 +33,7 @@ class Solution:
                 val = nums2[idx2]
                 idx2 += 1
             else:
-                val = nums1[idx2]
+                val = nums1[idx1]
                 idx1 += 1
             count += 1
         if even:

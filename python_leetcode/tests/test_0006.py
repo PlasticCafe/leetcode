@@ -8,3 +8,6 @@ class TestExamples(unittest.TestCase):
         self.assertEqual(self.solver.convert("PAYPALISHIRING", 3), "PAHNAPLSIIGYIR")
     def test_2(self):
         self.assertEqual(self.solver.convert("AB", 2), "AB")
+
+if __name__ == '__main__':
+    unittest.main()

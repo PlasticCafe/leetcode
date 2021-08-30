@@ -16,3 +16,6 @@ class TestExamples(unittest.TestCase):
         self.assertEqual(self.solver.longestPalindrome("bb"), "bb")
     def test_6(self):
         self.assertEqual(self.solver.longestPalindrome("aacabdkacaa"), "aca")
+
+if __name__ == '__main__':
+    unittest.main()

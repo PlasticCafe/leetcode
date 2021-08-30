@@ -7,3 +7,7 @@ class TestExamples(unittest.TestCase):
         self.assertEqual(self.solver.myAtoi("42"), 42)
         self.assertEqual(self.solver.myAtoi("-13"), -13)
         self.assertEqual(self.solver.myAtoi("4193 with words"), 4193)
+
+
+if __name__ == '__main__':
+    unittest.main()

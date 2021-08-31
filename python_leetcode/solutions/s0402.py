@@ -1,19 +1,26 @@
 class Solution:
     def removeKdigits(self, num: str, k: int) -> str:
-        return self.zeroStrip(self, num, k)[0]
+        if k == 0: return num
+        if k == len(num): return "0"
+        outputDigit = []
+        numIndex = 0
+        while numIndex < len(num):
+            if len(outputDigit) > 0 and int(num[numIndex]) < int(outputDigit[-1]) and k > 0:
+                outputDigit.pop()
+                k = k - 1
+            else:
+                outputDigit.append(num[numIndex])
+                numIndex = numIndex + 1
+        while(k > 0):
+            outputDigit.pop()
+            k = k - 1
+        zeroes = 0
+        for char in outputDigit:
+            if char != '0': break
+            zeroes = zeroes + 1
+        outputDigit = "".join(outputDigit[zeroes:])
+        if(outputDigit == ""): outputDigit = "0"
+        return outputDigit
 
-    def zeroStrip(self, num:str, k: int) -> tuple(str, int):
-        for i in range(min(k, len(str) - 1), -1): 
-            if(num[i] == '0'):
-                while(num[i] == '0' and i >= 0):
-                    i = i - 1
-                k = i + 1
-                num = num[i:]
-                break
-        k = k - i 
-        for i in range(len(num)):
-            if num[i] != '0':
-                num = num[i:]
-                break
-        return (num, k)
-            
+        
+
